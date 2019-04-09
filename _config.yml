@@ -5,9 +5,9 @@ baseurl: "/space-jekyll-template" # for test: remove string '/space-jekyll-templ
 url: "http://victorvoid.github.io/space-jekyll-template/" # for test: remove string 'http://victorvoid.github.io' to '' but in production: 'https://yourusername.github.io'
 
 # User settings
-username: lorem ipsum
+username: bangdinh
 user_title: Lorem Ipsum - FrontEnd
-email: lorem.lorem@ipsum.com
+email: bangdinh95@gmail.com
 twitter_username: loremipsum
 github_username:  loremipsum
 gplus_username:  loremipsum
@@ -59,12 +59,12 @@ links:
 
 # projects in header index
 projects:
-  - name: fluany
-    url: https://github.com/fluany/fluany
+  - name: bangdinh.github.io
+    url: https://github.com/bangdinh/bangdinh.github.io
   - name: vim-frontend
-    url: https://github.com/victorvoid/vim-frontend
+    url: https://github.com/bangdinh/bangdinh.github.io
   - name: generator-capybara
-    url: https://github.com/victorvoid/generator-capybara 
+    url: https://github.com/bangdinh/bangdinh.github.io
 
 # exclude my node related stuff
 exclude: ['package.json', 'src', 'node_modules']
