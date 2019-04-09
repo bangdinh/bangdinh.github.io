@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="1. Play with .bind()12345678910// document.querySelectorconst $ = document.querySelector.bind(document);// 1. Usageconst ele1 = $(&quot;#id1&quot;);const ele2 = $(&quot;.class2&quot;);const ele3 = $(&quot;div.user-panel.main">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript Shorthand">
+<meta property="og:url" content="https://anph29.github.io/2018/05/08/Javascript-shorthand/index.html">
+<meta property="og:site_name" content="Code notes &amp; tips">
+<meta property="og:description" content="1. Play with .bind()12345678910// document.querySelectorconst $ = document.querySelector.bind(document);// 1. Usageconst ele1 = $(&quot;#id1&quot;);const ele2 = $(&quot;.class2&quot;);const ele3 = $(&quot;div.user-panel.main">
+<meta property="og:updated_time" content="2019-03-27T03:38:01.507Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Javascript Shorthand">
+<meta name="twitter:description" content="1. Play with .bind()12345678910// document.querySelectorconst $ = document.querySelector.bind(document);// 1. Usageconst ele1 = $(&quot;#id1&quot;);const ele2 = $(&quot;.class2&quot;);const ele3 = $(&quot;div.user-panel.main">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="https://www.gravatar.com/avatar/91919cbf0f8f0fdf74b963ceae6c24db?s=16">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="https://www.gravatar.com/avatar/91919cbf0f8f0fdf74b963ceae6c24db?s=192" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="https://www.gravatar.com/avatar/91919cbf0f8f0fdf74b963ceae6c24db?s=180">
+          
+        
+    
+    <!-- title -->
+    <title>Javascript Shorthand</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">home</a></li>
+         
+          <li><a href="/categories/javascript">javascript</a></li>
+         
+          <li><a href="/categories/python">python</a></li>
+         
+          <li><a href="/categories/docker">docker</a></li>
+         
+          <li><a href="/categories/algorithm">algorithm</a></li>
+         
+          <li><a href="/categories/git">git</a></li>
+         
+          <li><a href="/about/">about</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2018/05/08/design-pattern-singleton-pattern/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2018/05/08/QB-table-syntax/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://anph29.github.io/2018/05/08/Javascript-shorthand/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://anph29.github.io/2018/05/08/Javascript-shorthand/&text=Javascript Shorthand"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://anph29.github.io/2018/05/08/Javascript-shorthand/&title=Javascript Shorthand"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://anph29.github.io/2018/05/08/Javascript-shorthand/&is_video=false&description=Javascript Shorthand"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Javascript Shorthand&body=Check out this article: https://anph29.github.io/2018/05/08/Javascript-shorthand/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://anph29.github.io/2018/05/08/Javascript-shorthand/&title=Javascript Shorthand"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://anph29.github.io/2018/05/08/Javascript-shorthand/&title=Javascript Shorthand"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://anph29.github.io/2018/05/08/Javascript-shorthand/&title=Javascript Shorthand"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://anph29.github.io/2018/05/08/Javascript-shorthand/&title=Javascript Shorthand"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://anph29.github.io/2018/05/08/Javascript-shorthand/&name=Javascript Shorthand&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Play-with-bind"><span class="toc-number">1.</span> <span class="toc-text">1. Play with .bind()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Clone-object-array"><span class="toc-number">2.</span> <span class="toc-text">2. Clone object, array</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Swap-value"><span class="toc-number">3.</span> <span class="toc-text">3. Swap value</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Random-with-range"><span class="toc-number">4.</span> <span class="toc-text">4. Random with range</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-trim-DIY"><span class="toc-number">5.</span> <span class="toc-text">5. trim() DIY</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Cast-arguments-to-Array"><span class="toc-number">6.</span> <span class="toc-text">6. Cast arguments to Array</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-Max-min-in-array"><span class="toc-number">7.</span> <span class="toc-text">7. Max, min in array</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-Reset-Array"><span class="toc-number">8.</span> <span class="toc-text">8. Reset Array</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-Delete-Array-emlement"><span class="toc-number">9.</span> <span class="toc-text">9. Delete Array emlement</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-Use-amp-amp-or-instead-of-if-and-if-else"><span class="toc-number">10.</span> <span class="toc-text">10. Use &amp;&amp; or || instead of if and if else</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-Loop-object"><span class="toc-number">11.</span> <span class="toc-text">11. Loop object</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-Clone-object-and-array-use-Spread"><span class="toc-number">12.</span> <span class="toc-text">12. Clone object and array use Spread</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-Join-Array"><span class="toc-number">13.</span> <span class="toc-text">13. Join Array</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-Set-key-from-variable"><span class="toc-number">14.</span> <span class="toc-text">14. Set key from variable</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-Cast-value"><span class="toc-number">15.</span> <span class="toc-text">15. Cast value</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16-Object-Property"><span class="toc-number">16.</span> <span class="toc-text">16. Object Property</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#17-Method"><span class="toc-number">17.</span> <span class="toc-text">17. Method</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#18-Parse-Int-be-careful"><span class="toc-number">18.</span> <span class="toc-text">18. Parse Int (*) be careful</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#19-Verify-variable-cast-to-boolean"><span class="toc-number">19.</span> <span class="toc-text">19. Verify variable (cast to boolean)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#20-Rest-va-spread"><span class="toc-number">20.</span> <span class="toc-text">20. Rest và spread</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#21-Create-amp-set-key-by-variable"><span class="toc-number">21.</span> <span class="toc-text">21. Create &amp; set key by variable</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-Deduplicated-item-in-array"><span class="toc-number">22.</span> <span class="toc-text">22. Deduplicated item in array</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#23-Number-to-character"><span class="toc-number">23.</span> <span class="toc-text">23. Number to character</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#24-Fast-way-Math-floor"><span class="toc-number">24.</span> <span class="toc-text">24. Fast way Math.floor</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Javascript Shorthand
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Code notes & tips</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2018-05-08T06:47:49.000Z" itemprop="datePublished">2018-05-08</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/javascript/">javascript</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="1-Play-with-bind"><a href="#1-Play-with-bind" class="headerlink" title="1. Play with .bind()"></a>1. Play with <code>.bind()</code></h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// document.querySelector</span></span><br><span class="line"><span class="keyword">const</span> $ = <span class="built_in">document</span>.querySelector.bind(<span class="built_in">document</span>);</span><br><span class="line"><span class="comment">// 1. Usage</span></span><br><span class="line"><span class="keyword">const</span> ele1 = $(<span class="string">"#id1"</span>);</span><br><span class="line"><span class="keyword">const</span> ele2 = $(<span class="string">".class2"</span>);</span><br><span class="line"><span class="keyword">const</span> ele3 = $(<span class="string">"div.user-panel.main input[name='login']"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. console.log</span></span><br><span class="line"><span class="keyword">const</span> log = <span class="built_in">console</span>.log.bind(<span class="built_in">document</span>);</span><br><span class="line">log(<span class="string">'hello'</span>); <span class="comment">// -&gt; hello</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-Clone-object-array"><a href="#2-Clone-object-array" class="headerlink" title="2. Clone object, array"></a>2. Clone object, array</h2><p>a. Object<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// shallow clone an object </span></span><br><span class="line"><span class="keyword">const</span> newObj = <span class="built_in">Object</span>.assign(&#123;&#125;, obj);</span><br></pre></td></tr></table></figure></p>
+<p>or<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// deep clone an object</span></span><br><span class="line"><span class="keyword">const</span> newObj = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(obj));</span><br></pre></td></tr></table></figure></p>
+<p>b. Array<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">const</span> b = a.slice();</span><br><span class="line"><span class="built_in">console</span>.log(b);       <span class="comment">// -&gt; [1, 2, 3]</span></span><br><span class="line"><span class="built_in">console</span>.log(b === a); <span class="comment">// -&gt; false</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="3-Swap-value"><a href="#3-Swap-value" class="headerlink" title="3. Swap value"></a>3. Swap value</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> x = <span class="number">1</span>, y = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(x, y); <span class="comment">// 1, 2</span></span><br><span class="line"></span><br><span class="line">[x, y] = [y, x];</span><br><span class="line"><span class="built_in">console</span>.log(x, y); <span class="comment">// 2, 1</span></span><br></pre></td></tr></table></figure>
+<h2 id="4-Random-with-range"><a href="#4-Random-with-range" class="headerlink" title="4. Random with range"></a>4. Random with range</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> random = <span class="function">(<span class="params">min, max</span>) =&gt;</span> <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * (max - min + <span class="number">1</span>)) + min;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// Usage</span></span><br><span class="line"><span class="keyword">const</span> a = random(<span class="number">1</span>, <span class="number">100</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="5-trim-DIY"><a href="#5-trim-DIY" class="headerlink" title="5. trim() DIY"></a>5. <code>trim()</code> DIY</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">trim</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x.replace(<span class="regexp">/^\s+|\s+$/gm</span>,<span class="string">''</span>);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> str = <span class="string">"       Hello World!        "</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str)         <span class="comment">// -&gt;        Hello World!        </span></span><br><span class="line"><span class="built_in">console</span>.log(trim(str));  <span class="comment">// -&gt; Hello World!</span></span><br></pre></td></tr></table></figure>
+<h2 id="6-Cast-arguments-to-Array"><a href="#6-Cast-arguments-to-Array" class="headerlink" title="6. Cast arguments to Array"></a>6. Cast <code>arguments</code> to <code>Array</code></h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> args = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>);</span><br><span class="line"><span class="keyword">const</span> args = [].slice.call(<span class="built_in">arguments</span>);</span><br><span class="line"> </span><br><span class="line"><span class="comment">// ES2015</span></span><br><span class="line"><span class="keyword">const</span> args = <span class="built_in">Array</span>.from(<span class="built_in">arguments</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="7-Max-min-in-array"><a href="#7-Max-min-in-array" class="headerlink" title="7. Max, min in array"></a>7. Max, min in array</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> numbers = [<span class="number">1</span>, <span class="number">8</span> , <span class="number">10</span> , <span class="number">-125</span> , <span class="number">28</span> , <span class="number">100</span> , <span class="number">215</span>, <span class="number">-85</span>]; </span><br><span class="line"><span class="keyword">const</span> maxInNumbers = <span class="built_in">Math</span>.max.apply(<span class="built_in">Math</span>, numbers); </span><br><span class="line"><span class="keyword">const</span> minInNumbers = <span class="built_in">Math</span>.min.apply(<span class="built_in">Math</span>, numbers);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(maxInNumbers, minInNumbers);</span><br><span class="line"><span class="comment">// -&gt; 215 -125</span></span><br></pre></td></tr></table></figure>
+<h2 id="8-Reset-Array"><a href="#8-Reset-Array" class="headerlink" title="8. Reset Array"></a>8. Reset Array</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="comment">//a = [];//not this</span></span><br><span class="line">a.length = <span class="number">0</span>;<span class="comment">//use this</span></span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// -&gt; []</span></span><br></pre></td></tr></table></figure>
+<h2 id="9-Delete-Array-emlement"><a href="#9-Delete-Array-emlement" class="headerlink" title="9. Delete Array emlement"></a>9. Delete Array emlement</h2><p>a. Wrong way<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="string">"a"</span>, <span class="number">1</span>, <span class="number">-5</span>, <span class="string">"cde"</span>];</span><br><span class="line"><span class="built_in">console</span>.log(arr);        <span class="comment">// -&gt; ["a", 1, -5, "cde"]</span></span><br><span class="line"><span class="keyword">delete</span> arr[<span class="number">2</span>];</span><br><span class="line"><span class="built_in">console</span>.log(arr);        <span class="comment">// -&gt; ["a", 1, undefined, "cde"]</span></span><br><span class="line"><span class="built_in">console</span>.log(arr.length); <span class="comment">// -&gt; 4</span></span><br></pre></td></tr></table></figure></p>
+<p>b. Right way<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">"a"</span>, <span class="number">1</span>, <span class="number">-5</span>, <span class="string">"cde"</span>];</span><br><span class="line"><span class="built_in">console</span>.log(arr);        <span class="comment">// -&gt; ["a", 1, -5, "cde"]</span></span><br><span class="line">arr.splice(<span class="number">2</span>, <span class="number">1</span>);</span><br><span class="line"><span class="built_in">console</span>.log(arr);        <span class="comment">// -&gt; ["a", 1, "cde"]</span></span><br><span class="line"><span class="built_in">console</span>.log(arr.length); <span class="comment">// -&gt; 3</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="10-Use-amp-amp-or-instead-of-if-and-if-else"><a href="#10-Use-amp-amp-or-instead-of-if-and-if-else" class="headerlink" title="10. Use &amp;&amp; or || instead of if and if else"></a>10. Use <code>&amp;&amp;</code> or <code>||</code> instead of <code>if</code> and <code>if else</code></h2><p>a. <code>if</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">if</span> (a === <span class="number">10</span>) <span class="built_in">console</span>.log(<span class="string">"a === 10"</span>); <span class="comment">// -&gt; a === 10</span></span><br><span class="line"><span class="keyword">if</span> (a !== <span class="number">5</span>) <span class="built_in">console</span>.log(<span class="string">"a !== 5"</span>); <span class="comment">// -&gt; a !== 5</span></span><br></pre></td></tr></table></figure></p>
+<p>-&gt;<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">10</span>;</span><br><span class="line">a === <span class="number">10</span> &amp;&amp; <span class="built_in">console</span>.log(<span class="string">"a === 10"</span>); <span class="comment">// -&gt; a === 10</span></span><br><span class="line">a === <span class="number">5</span> || <span class="built_in">console</span>.log(<span class="string">"a !== 5"</span>);   <span class="comment">// -&gt; a !== 5</span></span><br></pre></td></tr></table></figure></p>
+<p>b. <code>if else</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">if</span> (a === <span class="number">5</span>) <span class="built_in">console</span>.log(<span class="string">"a === 5"</span>);</span><br><span class="line"><span class="keyword">else</span> <span class="built_in">console</span>.log(<span class="string">"a !== 5"</span>);</span><br></pre></td></tr></table></figure></p>
+<p>-&gt;<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">10</span>;</span><br><span class="line">a === <span class="number">5</span> &amp;&amp; <span class="built_in">console</span>.log(<span class="string">"a === 5"</span>) || <span class="built_in">console</span>.log(<span class="string">"a !== 5"</span>);</span><br></pre></td></tr></table></figure></p>
+<h2 id="11-Loop-object"><a href="#11-Loop-object" class="headerlink" title="11. Loop object"></a>11. Loop object</h2><p>(*) Use this way really effective when object is 1 level object</p>
+<ol>
+<li><p>use <code>for..in</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> object = &#123;...&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> name <span class="keyword">in</span> object) &#123;  </span><br><span class="line">    <span class="keyword">if</span> (object.hasOwnProperty(name)) &#123; </span><br><span class="line">        <span class="comment">// do something with name                    </span></span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>use <code>array prototype function</code> (map, forEach..)</p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> object = &#123;...&#125;;</span><br><span class="line"><span class="built_in">Object</span>.key(object).forEach(<span class="function"><span class="params">key</span>=&gt;</span>&#123;</span><br><span class="line">      <span class="comment">// do something with key                    </span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="12-Clone-object-and-array-use-Spread"><a href="#12-Clone-object-and-array-use-Spread" class="headerlink" title="12. Clone object and array use Spread"></a>12. Clone object and array use Spread</h2><p>  a. Clone object:<br>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;<span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">2</span>&#125;;</span><br><span class="line"><span class="keyword">let</span> obj2 = &#123;...obj&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(obj2); <span class="comment">// -&gt; &#123;a: 1, b: 2&#125;;</span></span><br></pre></td></tr></table></figure></p>
+<p>  b. Clone array:<br>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line"><span class="keyword">let</span> arr2 = [...arr];</span><br><span class="line"><span class="built_in">console</span>.log(arr2); <span class="comment">// =&gt; [1, 2];</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="13-Join-Array"><a href="#13-Join-Array" class="headerlink" title="13. Join Array"></a>13. Join Array</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> one = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br><span class="line"><span class="keyword">let</span> two = [<span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>]</span><br><span class="line"><span class="keyword">let</span> three = [<span class="string">'g'</span>, <span class="string">'h'</span>, <span class="string">'i'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// Old way #1</span></span><br><span class="line"><span class="keyword">const</span> result1 = one.concat(two, three);</span><br><span class="line"><span class="built_in">console</span>.log(result1);</span><br><span class="line"><span class="comment">// -&gt; ["a", "b", "c", "d", "e", "f", "g", "h", "i"]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Old way #2</span></span><br><span class="line"><span class="keyword">const</span> result2 = [].concat(one, two, three);</span><br><span class="line"><span class="built_in">console</span>.log(result2);</span><br><span class="line"><span class="comment">// -&gt; ["a", "b", "c", "d", "e", "f", "g", "h", "i"]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// New</span></span><br><span class="line"><span class="keyword">const</span> result3 = [...one, ...two, ...three];</span><br><span class="line"><span class="built_in">console</span>.log(result3);</span><br><span class="line"><span class="comment">// -&gt; ["a", "b", "c", "d", "e", "f", "g", "h", "i"]</span></span><br></pre></td></tr></table></figure>
+<h2 id="14-Set-key-from-variable"><a href="#14-Set-key-from-variable" class="headerlink" title="14. Set key from variable"></a>14. Set key from variable</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myKey = <span class="string">'key3'</span>;</span><br><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    key1: <span class="string">'One'</span>,</span><br><span class="line">    key2: <span class="string">'Two'</span></span><br><span class="line">&#125;;</span><br><span class="line">obj[myKey] = <span class="string">'Three'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj); <span class="comment">// -&gt; &#123;key1: "One", key2: "Two", key3: "Three"&#125;</span></span><br></pre></td></tr></table></figure>
+<p>-&gt;<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myKey = <span class="string">'key3'</span>;</span><br><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    key1: <span class="string">'One'</span>,</span><br><span class="line">    key2: <span class="string">'Two'</span>,</span><br><span class="line">    [myKey]: <span class="string">'Three'</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(obj); <span class="comment">// -&gt; &#123;key1: "One", key2: "Two", key3: "Three"&#125;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="15-Cast-value"><a href="#15-Cast-value" class="headerlink" title="15. Cast value"></a>15. Cast value</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (variable1 !== <span class="literal">null</span> || variable1 !== <span class="literal">undefined</span> || variable1 !== <span class="string">''</span>) &#123;</span><br><span class="line">     <span class="keyword">let</span> variable2 = variable1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>-&gt;<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> variable2 = variable1  || <span class="string">'new'</span>;</span><br></pre></td></tr></table></figure></p>
+<h2 id="16-Object-Property"><a href="#16-Object-Property" class="headerlink" title="16. Object Property"></a>16. Object Property</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123; <span class="attr">x</span>:x, <span class="attr">y</span>:y &#125;;</span><br></pre></td></tr></table></figure>
+<p>-&gt;<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123; x, y &#125;;</span><br></pre></td></tr></table></figure></p>
+<h2 id="17-Method"><a href="#17-Method" class="headerlink" title="17. Method"></a>17. Method</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  foo: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">/* code */</span></span><br><span class="line">  &#125;,</span><br><span class="line">  bar: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">/* code */</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>-&gt;<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  foo() &#123;</span><br><span class="line">    <span class="comment">/* code */</span></span><br><span class="line">  &#125;,</span><br><span class="line">  bar() &#123;</span><br><span class="line">    <span class="comment">/* code */</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h2 id="18-Parse-Int-be-careful"><a href="#18-Parse-Int-be-careful" class="headerlink" title="18. Parse Int (*) be careful"></a>18. Parse Int (*) be careful</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">'123'</span>, b = <span class="string">'123a'</span>;</span><br><span class="line"><span class="comment">// Normal</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(a), <span class="built_in">parseInt</span>(b));<span class="comment">//-&gt; 123 123</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Advance</span></span><br><span class="line"><span class="built_in">console</span>.log(+a, +b);<span class="comment">//-&gt; 123 NaN</span></span><br></pre></td></tr></table></figure>
+<h2 id="19-Verify-variable-cast-to-boolean"><a href="#19-Verify-variable-cast-to-boolean" class="headerlink" title="19. Verify variable (cast to boolean)"></a>19. Verify variable (cast to boolean)</h2><p>6 fasly value: <code>false, null, 0, &#39;&#39;, undefined, NaN</code> will cast to <code>false</code> else cast to <code>true</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="keyword">typeof</span> a !== <span class="string">'undefined'</span> &amp;&amp; a !== <span class="literal">null</span>)&#123;</span><br><span class="line">  <span class="comment">//</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>-&gt;<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(!!a)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="20-Rest-va-spread"><a href="#20-Rest-va-spread" class="headerlink" title="20. Rest và spread"></a>20. Rest và spread</h2><p>a. Rest: represents the rest: [phần còn lại] of <code>function</code>, <code>array</code> or <code>object</code> with variable name<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [first, second, ...others] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="built_in">console</span>.log(first, second, others)</span><br><span class="line"><span class="comment">// 1 2 [3, 4, 5]</span></span><br></pre></td></tr></table></figure></p>
+<p>We can use rest to define a function flexible like bellow:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> foo = <span class="function">(<span class="params">...args</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'You passed'</span>, args)</span><br><span class="line"><span class="built_in">console</span>.log(foo(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)) <span class="comment">// You passed[ 1, 2, 3 ]</span></span><br><span class="line"><span class="keyword">const</span> bar = <span class="function">(<span class="params">x, y, ...rest</span>) =&gt;</span> <span class="built_in">console</span>.log(rest, x, y)</span><br></pre></td></tr></table></figure></p>
+<p>(*) <code>args</code> difference to <code>arguments</code>:<br>  <code>args</code> is normal array<br>  <code>arguments</code> is default in a function, an object like <code>Array</code></p>
+<p>b. Spread: represents the <code>object</code> or array <code>available</code> with variable name</p>
+<ul>
+<li><p>replace <code>.concat()</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="keyword">const</span> newArr = [<span class="number">1</span>, <span class="number">2</span>, ...arr, <span class="number">6</span>]</span><br><span class="line"><span class="built_in">console</span>.log(newArr) <span class="comment">// [1, 2, 3, 4, 5, 6]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> head = [<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line"><span class="keyword">const</span> tail = [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="built_in">console</span>.log([...head, ...tail]) <span class="comment">// [1, 2, 3, 4, 5]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>replace <code>.apply()</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mul = <span class="function">(<span class="params">x, y, z</span>) =&gt;</span> x * y * z</span><br><span class="line"><span class="keyword">const</span> params = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="comment">// mul.prototype.apply(null, params)</span></span><br><span class="line">mul(...params)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>replace <code>.asign()</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123; <span class="attr">name</span>: <span class="string">'John'</span> &#125;</span><br><span class="line"><span class="comment">// ES5</span></span><br><span class="line"><span class="keyword">const</span> userWithAgeEs5 = <span class="built_in">Object</span>.assign(&#123;&#125;, user, &#123; <span class="attr">age</span>: <span class="number">21</span> &#125;)</span><br><span class="line"><span class="comment">// With spread</span></span><br><span class="line"><span class="keyword">const</span> userWithAge = &#123; ...user, <span class="attr">age</span>: <span class="number">21</span> &#125;</span><br><span class="line"><span class="built_in">console</span>.log(userWithAge) <span class="comment">// &#123; name: 'John', age: 21 &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// bonus rest detruct</span></span><br><span class="line"><span class="keyword">const</span> &#123; name, ...others &#125; = userWithAge</span><br><span class="line"><span class="built_in">console</span>.log(others) <span class="comment">// &#123; age: 21 &#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="21-Create-amp-set-key-by-variable"><a href="#21-Create-amp-set-key-by-variable" class="headerlink" title="21. Create &amp; set key by variable"></a>21. Create &amp; set key by variable</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> attr = <span class="string">'foo'</span></span><br><span class="line"><span class="keyword">const</span> year = <span class="number">2017</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123; [attr]: <span class="number">1</span>, [<span class="string">'now'</span> + year]: <span class="string">'wow'</span> &#125;</span><br><span class="line"><span class="built_in">console</span>.log(obj) <span class="comment">// &#123; foo: 1, now2017: 'wow' &#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="22-Deduplicated-item-in-array"><a href="#22-Deduplicated-item-in-array" class="headerlink" title="22. Deduplicated item in array"></a>22. Deduplicated item in array</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = [<span class="string">'red'</span>, <span class="string">'blue'</span>, <span class="string">'sweet'</span>, <span class="string">'red'</span>, <span class="string">'you'</span>]</span><br><span class="line"><span class="keyword">const</span> b = [...new <span class="built_in">Set</span>(a)]</span><br><span class="line"><span class="built_in">console</span>.log(b) <span class="comment">// [ 'red', 'blue', 'sweet', 'you' ]</span></span><br></pre></td></tr></table></figure>
+<h2 id="23-Number-to-character"><a href="#23-Number-to-character" class="headerlink" title="23. Number to character"></a>23. Number to character</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'0123456789'</span>.split(<span class="string">''</span>).map(<span class="function"><span class="params">no</span> =&gt;</span> <span class="built_in">String</span>.fromCharCode(<span class="number">65</span> + +no)))<span class="comment">//["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'0123456789'</span>.split(<span class="string">''</span>).map(<span class="function"><span class="params">no</span> =&gt;</span> <span class="built_in">String</span>.fromCharCode(<span class="number">97</span> + +no)))<span class="comment">//["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]</span></span><br></pre></td></tr></table></figure>
+<h2 id="24-Fast-way-Math-floor"><a href="#24-Fast-way-Math-floor" class="headerlink" title="24. Fast way Math.floor"></a>24. Fast way Math.floor</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//similar way</span></span><br><span class="line"><span class="keyword">const</span> _a = <span class="built_in">Math</span>.floor(<span class="number">10</span> / <span class="number">3</span>);<span class="comment">//3</span></span><br><span class="line"><span class="comment">//fast way</span></span><br><span class="line"><span class="keyword">const</span> _b = ~~(<span class="number">10</span> / <span class="number">3</span>);<span class="comment">//3</span></span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">home</a></li>
+         
+          <li><a href="/categories/javascript">javascript</a></li>
+         
+          <li><a href="/categories/python">python</a></li>
+         
+          <li><a href="/categories/docker">docker</a></li>
+         
+          <li><a href="/categories/algorithm">algorithm</a></li>
+         
+          <li><a href="/categories/git">git</a></li>
+         
+          <li><a href="/about/">about</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Play-with-bind"><span class="toc-number">1.</span> <span class="toc-text">1. Play with .bind()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Clone-object-array"><span class="toc-number">2.</span> <span class="toc-text">2. Clone object, array</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Swap-value"><span class="toc-number">3.</span> <span class="toc-text">3. Swap value</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Random-with-range"><span class="toc-number">4.</span> <span class="toc-text">4. Random with range</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-trim-DIY"><span class="toc-number">5.</span> <span class="toc-text">5. trim() DIY</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Cast-arguments-to-Array"><span class="toc-number">6.</span> <span class="toc-text">6. Cast arguments to Array</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-Max-min-in-array"><span class="toc-number">7.</span> <span class="toc-text">7. Max, min in array</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-Reset-Array"><span class="toc-number">8.</span> <span class="toc-text">8. Reset Array</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-Delete-Array-emlement"><span class="toc-number">9.</span> <span class="toc-text">9. Delete Array emlement</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-Use-amp-amp-or-instead-of-if-and-if-else"><span class="toc-number">10.</span> <span class="toc-text">10. Use &amp;&amp; or || instead of if and if else</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-Loop-object"><span class="toc-number">11.</span> <span class="toc-text">11. Loop object</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-Clone-object-and-array-use-Spread"><span class="toc-number">12.</span> <span class="toc-text">12. Clone object and array use Spread</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-Join-Array"><span class="toc-number">13.</span> <span class="toc-text">13. Join Array</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-Set-key-from-variable"><span class="toc-number">14.</span> <span class="toc-text">14. Set key from variable</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-Cast-value"><span class="toc-number">15.</span> <span class="toc-text">15. Cast value</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16-Object-Property"><span class="toc-number">16.</span> <span class="toc-text">16. Object Property</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#17-Method"><span class="toc-number">17.</span> <span class="toc-text">17. Method</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#18-Parse-Int-be-careful"><span class="toc-number">18.</span> <span class="toc-text">18. Parse Int (*) be careful</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#19-Verify-variable-cast-to-boolean"><span class="toc-number">19.</span> <span class="toc-text">19. Verify variable (cast to boolean)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#20-Rest-va-spread"><span class="toc-number">20.</span> <span class="toc-text">20. Rest và spread</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#21-Create-amp-set-key-by-variable"><span class="toc-number">21.</span> <span class="toc-text">21. Create &amp; set key by variable</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-Deduplicated-item-in-array"><span class="toc-number">22.</span> <span class="toc-text">22. Deduplicated item in array</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#23-Number-to-character"><span class="toc-number">23.</span> <span class="toc-text">23. Number to character</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#24-Fast-way-Math-floor"><span class="toc-number">24.</span> <span class="toc-text">24. Fast way Math.floor</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://anph29.github.io/2018/05/08/Javascript-shorthand/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://anph29.github.io/2018/05/08/Javascript-shorthand/&text=Javascript Shorthand"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://anph29.github.io/2018/05/08/Javascript-shorthand/&title=Javascript Shorthand"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://anph29.github.io/2018/05/08/Javascript-shorthand/&is_video=false&description=Javascript Shorthand"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Javascript Shorthand&body=Check out this article: https://anph29.github.io/2018/05/08/Javascript-shorthand/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://anph29.github.io/2018/05/08/Javascript-shorthand/&title=Javascript Shorthand"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://anph29.github.io/2018/05/08/Javascript-shorthand/&title=Javascript Shorthand"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://anph29.github.io/2018/05/08/Javascript-shorthand/&title=Javascript Shorthand"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://anph29.github.io/2018/05/08/Javascript-shorthand/&title=Javascript Shorthand"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://anph29.github.io/2018/05/08/Javascript-shorthand/&name=Javascript Shorthand&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+    
+      
+  <script>
+    var disqus_shortname = 'https-anph29-github-io';
+    
+    var disqus_url = 'https://anph29.github.io/2018/05/08/Javascript-shorthand/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//go.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  
+<footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 Anph
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">home</a></li>
+         
+          <li><a href="/categories/javascript">javascript</a></li>
+         
+          <li><a href="/categories/python">python</a></li>
+         
+          <li><a href="/categories/docker">docker</a></li>
+         
+          <li><a href="/categories/algorithm">algorithm</a></li>
+         
+          <li><a href="/categories/git">git</a></li>
+         
+          <li><a href="/about/">about</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+<div id="disqus_thread"></div>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Disqus Comments -->
+
+

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="CALL Call invokes the function and allows you to pass in arguments one by one. Gọi hàm và cho phép bạn truyền vào một object và các đối số phân cách nhau bởi dấu phẩy (Comma)123456789var person1 = &amp;#1">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CALL, APPLY &amp; BIND">
+<meta property="og:url" content="https://anph29.github.io/2018/06/01/CALL-APPLY-BIND/index.html">
+<meta property="og:site_name" content="Code notes &amp; tips">
+<meta property="og:description" content="CALL Call invokes the function and allows you to pass in arguments one by one. Gọi hàm và cho phép bạn truyền vào một object và các đối số phân cách nhau bởi dấu phẩy (Comma)123456789var person1 = &amp;#1">
+<meta property="og:updated_time" content="2019-03-27T03:18:10.852Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CALL, APPLY &amp; BIND">
+<meta name="twitter:description" content="CALL Call invokes the function and allows you to pass in arguments one by one. Gọi hàm và cho phép bạn truyền vào một object và các đối số phân cách nhau bởi dấu phẩy (Comma)123456789var person1 = &amp;#1">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="https://www.gravatar.com/avatar/91919cbf0f8f0fdf74b963ceae6c24db?s=16">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="https://www.gravatar.com/avatar/91919cbf0f8f0fdf74b963ceae6c24db?s=192" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="https://www.gravatar.com/avatar/91919cbf0f8f0fdf74b963ceae6c24db?s=180">
+          
+        
+    
+    <!-- title -->
+    <title>CALL, APPLY &amp; BIND</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">home</a></li>
+         
+          <li><a href="/categories/javascript">javascript</a></li>
+         
+          <li><a href="/categories/python">python</a></li>
+         
+          <li><a href="/categories/docker">docker</a></li>
+         
+          <li><a href="/categories/algorithm">algorithm</a></li>
+         
+          <li><a href="/categories/git">git</a></li>
+         
+          <li><a href="/about/">about</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2018/06/06/Make-countdown-timer/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2018/05/29/client-server-token-validate/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://anph29.github.io/2018/06/01/CALL-APPLY-BIND/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://anph29.github.io/2018/06/01/CALL-APPLY-BIND/&text=CALL, APPLY &amp; BIND"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://anph29.github.io/2018/06/01/CALL-APPLY-BIND/&title=CALL, APPLY &amp; BIND"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://anph29.github.io/2018/06/01/CALL-APPLY-BIND/&is_video=false&description=CALL, APPLY &amp; BIND"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=CALL, APPLY &amp; BIND&body=Check out this article: https://anph29.github.io/2018/06/01/CALL-APPLY-BIND/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://anph29.github.io/2018/06/01/CALL-APPLY-BIND/&title=CALL, APPLY &amp; BIND"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://anph29.github.io/2018/06/01/CALL-APPLY-BIND/&title=CALL, APPLY &amp; BIND"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://anph29.github.io/2018/06/01/CALL-APPLY-BIND/&title=CALL, APPLY &amp; BIND"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://anph29.github.io/2018/06/01/CALL-APPLY-BIND/&title=CALL, APPLY &amp; BIND"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://anph29.github.io/2018/06/01/CALL-APPLY-BIND/&name=CALL, APPLY &amp; BIND&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CALL"><span class="toc-number">1.</span> <span class="toc-text">CALL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#APPLY"><span class="toc-number">2.</span> <span class="toc-text">APPLY</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BIND"><span class="toc-number">3.</span> <span class="toc-text">BIND</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        CALL, APPLY &amp; BIND
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Code notes & tips</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2018-06-01T02:53:32.000Z" itemprop="datePublished">2018-06-01</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/javascript/">javascript</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="CALL"><a href="#CALL" class="headerlink" title="CALL"></a>CALL</h2><ol>
+<li>Call invokes the function and allows you to pass in arguments one by one.</li>
+<li>Gọi hàm và cho phép bạn truyền vào một object và các đối số phân cách nhau bởi dấu phẩy (Comma)<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person1 = &#123;<span class="attr">firstName</span>: <span class="string">'Jon'</span>, <span class="attr">lastName</span>: <span class="string">'Kuperman'</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> person2 = &#123;<span class="attr">firstName</span>: <span class="string">'Kelly'</span>, <span class="attr">lastName</span>: <span class="string">'King'</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">say</span>(<span class="params">greeting1, greeting2</span>) </span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(greeting1 + <span class="string">','</span> + greeting2 + <span class="string">' '</span> + <span class="keyword">this</span>.firstName + <span class="string">' '</span> + <span class="keyword">this</span>.lastName);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">say.call(person1, <span class="string">'Hello'</span>, <span class="string">'Good morning'</span>); <span class="comment">// =&gt; Hello,Good morning Jon Kuperman</span></span><br><span class="line">say.call(person2, <span class="string">'Hello'</span>, <span class="string">'Good morning'</span>); <span class="comment">// =&gt; Hello,Good morning Kelly King</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="APPLY"><a href="#APPLY" class="headerlink" title="APPLY"></a>APPLY</h2><ol>
+<li>Apply invokes the function and allows you to pass in arguments as an array.</li>
+<li>Gọi hàm và cho phép bạn truyền vào một object và các đối số thông qua mảng (Array)<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person1 = &#123;<span class="attr">firstName</span>: <span class="string">'Jon'</span>, <span class="attr">lastName</span>: <span class="string">'Kuperman'</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> person2 = &#123;<span class="attr">firstName</span>: <span class="string">'Kelly'</span>, <span class="attr">lastName</span>: <span class="string">'King'</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">say</span>(<span class="params">greeting0, greeting1</span>) </span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(greeting0 + <span class="string">','</span> + greeting1 + <span class="string">' '</span> + <span class="keyword">this</span>.firstName + <span class="string">' '</span> + <span class="keyword">this</span>.lastName);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">say.apply(person1, [<span class="string">'Hello'</span>, <span class="string">'Good moring'</span>]); <span class="comment">// =&gt; Hello,Good moring Jon Kuperman</span></span><br><span class="line">say.apply(person2, [<span class="string">'Hello'</span>, <span class="string">'Good moring'</span>]); <span class="comment">// =&gt; Hello,Good moring Kelly King</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="BIND"><a href="#BIND" class="headerlink" title="BIND"></a>BIND</h2><ol>
+<li>Bind returns a new function, allowing you to pass in a this array and any number of arguments.</li>
+<li>Trả về một hàm số mới, cho phép bạn truyền vào một object và các đối số phân cách nhau bởi dấu phẩy.<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person1 = &#123;<span class="attr">firstName</span>: <span class="string">'Jon'</span>, <span class="attr">lastName</span>: <span class="string">'Kuperman'</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> person2 = &#123;<span class="attr">firstName</span>: <span class="string">'Kelly'</span>, <span class="attr">lastName</span>: <span class="string">'King'</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">say</span>(<span class="params">greeting0, greeting1</span>) </span>&#123;</span><br><span class="line"> <span class="built_in">console</span>.log(greeting0 + <span class="string">','</span> + greeting1 + <span class="string">' '</span> + <span class="keyword">this</span>.firstName + <span class="string">' '</span> + <span class="keyword">this</span>.lastName);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> sayHelloJon = say.bind(person1, <span class="string">'Hello'</span>, <span class="string">'Good morning'</span>);</span><br><span class="line"><span class="keyword">var</span> sayHelloKelly = say.bind(person2, <span class="string">'Hello'</span>, <span class="string">'Good morning'</span>);</span><br><span class="line"></span><br><span class="line">sayHelloJon(); <span class="comment">// =&gt; Hello,Good morning Jon Kuperman</span></span><br><span class="line">sayHelloKelly(); <span class="comment">// =&gt; Hello,Good morning Kelly King</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><a href="https://codeplanet.io/javascript-apply-vs-call-vs-bind/" target="_blank" rel="noopener">https://codeplanet.io/javascript-apply-vs-call-vs-bind/</a></p>
+
+  </div>
+</article>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">home</a></li>
+         
+          <li><a href="/categories/javascript">javascript</a></li>
+         
+          <li><a href="/categories/python">python</a></li>
+         
+          <li><a href="/categories/docker">docker</a></li>
+         
+          <li><a href="/categories/algorithm">algorithm</a></li>
+         
+          <li><a href="/categories/git">git</a></li>
+         
+          <li><a href="/about/">about</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CALL"><span class="toc-number">1.</span> <span class="toc-text">CALL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#APPLY"><span class="toc-number">2.</span> <span class="toc-text">APPLY</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BIND"><span class="toc-number">3.</span> <span class="toc-text">BIND</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://anph29.github.io/2018/06/01/CALL-APPLY-BIND/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://anph29.github.io/2018/06/01/CALL-APPLY-BIND/&text=CALL, APPLY &amp; BIND"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://anph29.github.io/2018/06/01/CALL-APPLY-BIND/&title=CALL, APPLY &amp; BIND"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://anph29.github.io/2018/06/01/CALL-APPLY-BIND/&is_video=false&description=CALL, APPLY &amp; BIND"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=CALL, APPLY &amp; BIND&body=Check out this article: https://anph29.github.io/2018/06/01/CALL-APPLY-BIND/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://anph29.github.io/2018/06/01/CALL-APPLY-BIND/&title=CALL, APPLY &amp; BIND"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://anph29.github.io/2018/06/01/CALL-APPLY-BIND/&title=CALL, APPLY &amp; BIND"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://anph29.github.io/2018/06/01/CALL-APPLY-BIND/&title=CALL, APPLY &amp; BIND"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://anph29.github.io/2018/06/01/CALL-APPLY-BIND/&title=CALL, APPLY &amp; BIND"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://anph29.github.io/2018/06/01/CALL-APPLY-BIND/&name=CALL, APPLY &amp; BIND&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+    
+      
+  <script>
+    var disqus_shortname = 'https-anph29-github-io';
+    
+    var disqus_url = 'https://anph29.github.io/2018/06/01/CALL-APPLY-BIND/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//go.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  
+<footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 Anph
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">home</a></li>
+         
+          <li><a href="/categories/javascript">javascript</a></li>
+         
+          <li><a href="/categories/python">python</a></li>
+         
+          <li><a href="/categories/docker">docker</a></li>
+         
+          <li><a href="/categories/algorithm">algorithm</a></li>
+         
+          <li><a href="/categories/git">git</a></li>
+         
+          <li><a href="/about/">about</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+<div id="disqus_thread"></div>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Disqus Comments -->
+
+

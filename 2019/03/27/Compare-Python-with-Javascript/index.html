@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="This note write some difference between JS with Python from a JS developer learning Pythoncomment in code(*) nice tutorial resource: https://data-flair.training/blogs/python-tutorials-home/  js 12345/">
+<meta name="keywords" content="javascript,python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Compare Python With Javascript">
+<meta property="og:url" content="https://anph29.github.io/2019/03/27/Compare-Python-with-Javascript/index.html">
+<meta property="og:site_name" content="Code notes &amp; tips">
+<meta property="og:description" content="This note write some difference between JS with Python from a JS developer learning Pythoncomment in code(*) nice tutorial resource: https://data-flair.training/blogs/python-tutorials-home/  js 12345/">
+<meta property="og:image" content="https://anph29.github.io/2019/03/27/Compare-Python-with-Javascript/operator.jpg">
+<meta property="og:updated_time" content="2019-04-05T03:13:20.265Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Compare Python With Javascript">
+<meta name="twitter:description" content="This note write some difference between JS with Python from a JS developer learning Pythoncomment in code(*) nice tutorial resource: https://data-flair.training/blogs/python-tutorials-home/  js 12345/">
+<meta name="twitter:image" content="https://anph29.github.io/2019/03/27/Compare-Python-with-Javascript/operator.jpg">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="https://www.gravatar.com/avatar/91919cbf0f8f0fdf74b963ceae6c24db?s=16">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="https://www.gravatar.com/avatar/91919cbf0f8f0fdf74b963ceae6c24db?s=192" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="https://www.gravatar.com/avatar/91919cbf0f8f0fdf74b963ceae6c24db?s=180">
+          
+        
+    
+    <!-- title -->
+    <title>Compare Python With Javascript</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">home</a></li>
+         
+          <li><a href="/categories/javascript">javascript</a></li>
+         
+          <li><a href="/categories/python">python</a></li>
+         
+          <li><a href="/categories/docker">docker</a></li>
+         
+          <li><a href="/categories/algorithm">algorithm</a></li>
+         
+          <li><a href="/categories/git">git</a></li>
+         
+          <li><a href="/about/">about</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2019/03/28/Python-Reserved-keywords/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2019/03/26/Python-Operators-Prcedence/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://anph29.github.io/2019/03/27/Compare-Python-with-Javascript/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://anph29.github.io/2019/03/27/Compare-Python-with-Javascript/&text=Compare Python With Javascript"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://anph29.github.io/2019/03/27/Compare-Python-with-Javascript/&title=Compare Python With Javascript"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://anph29.github.io/2019/03/27/Compare-Python-with-Javascript/&is_video=false&description=Compare Python With Javascript"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Compare Python With Javascript&body=Check out this article: https://anph29.github.io/2019/03/27/Compare-Python-with-Javascript/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://anph29.github.io/2019/03/27/Compare-Python-with-Javascript/&title=Compare Python With Javascript"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://anph29.github.io/2019/03/27/Compare-Python-with-Javascript/&title=Compare Python With Javascript"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://anph29.github.io/2019/03/27/Compare-Python-with-Javascript/&title=Compare Python With Javascript"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://anph29.github.io/2019/03/27/Compare-Python-with-Javascript/&title=Compare Python With Javascript"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://anph29.github.io/2019/03/27/Compare-Python-with-Javascript/&name=Compare Python With Javascript&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#This-note-write-some-difference-between-JS-with-Python-from-a-JS-developer-learning-Python"><span class="toc-number">1.</span> <span class="toc-text">This note write some difference between JS with Python from a JS developer learning Python</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#comment-in-code"><span class="toc-number">1.1.</span> <span class="toc-text">comment in code</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Data-type"><span class="toc-number">1.2.</span> <span class="toc-text">Data type</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#variable"><span class="toc-number">1.3.</span> <span class="toc-text">variable</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#condition"><span class="toc-number">1.4.</span> <span class="toc-text">condition</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#operator"><span class="toc-number">1.5.</span> <span class="toc-text">operator</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ternary-operator"><span class="toc-number">1.6.</span> <span class="toc-text">ternary operator</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#loop"><span class="toc-number">1.7.</span> <span class="toc-text">loop</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#code-block"><span class="toc-number">1.8.</span> <span class="toc-text">code block</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#function"><span class="toc-number">1.9.</span> <span class="toc-text">function</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#arrow-lambda"><span class="toc-number">1.10.</span> <span class="toc-text">arrow | lambda</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#switch-case"><span class="toc-number">1.11.</span> <span class="toc-text">switch case</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#map"><span class="toc-number">1.12.</span> <span class="toc-text">map()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#filter"><span class="toc-number">1.13.</span> <span class="toc-text">filter()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#reduce"><span class="toc-number">1.14.</span> <span class="toc-text">reduce()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#exception"><span class="toc-number">1.15.</span> <span class="toc-text">exception</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#a-bit-bonus"><span class="toc-number">1.16.</span> <span class="toc-text">a bit bonus</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OOP"><span class="toc-number">1.17.</span> <span class="toc-text">OOP</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Compare Python With Javascript
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Code notes & tips</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2019-03-27T04:04:35.000Z" itemprop="datePublished">2019-03-27</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/javascript/">javascript</a>, <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="This-note-write-some-difference-between-JS-with-Python-from-a-JS-developer-learning-Python"><a href="#This-note-write-some-difference-between-JS-with-Python-from-a-JS-developer-learning-Python" class="headerlink" title="This note write some difference between JS with Python from a JS developer learning Python"></a>This note write some difference between <code>JS</code> with <code>Python</code> from a <code>JS</code> developer learning <code>Python</code></h1><h2 id="comment-in-code"><a href="#comment-in-code" class="headerlink" title="comment in code"></a>comment in code</h2><p>(*) nice tutorial resource: <a href="https://data-flair.training/blogs/python-tutorials-home/" target="_blank" rel="noopener">https://data-flair.training/blogs/python-tutorials-home/</a></p>
+<ul>
+<li><p>js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// this is single line comment</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * this is block of comment</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># this is single line comment</span></span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string"> " this is block of comment</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">"""this is docstring in function use in function define"""</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Data-type"><a href="#Data-type" class="headerlink" title="Data type"></a>Data type</h2><ul>
+<li><p>Javascript has 7 basic types in JavaScript:</p>
+<ul>
+<li>number</li>
+<li>string</li>
+<li>boolean [true, false]</li>
+<li>null</li>
+<li>undefined</li>
+<li>object</li>
+<li>symbol</li>
+</ul>
+<p>refer: <a href="https:/Jjavascript.info/types" target="_blank" rel="noopener">Javascript Info</a></p>
+</li>
+<li><p>Python has 5 standard Data Types:</p>
+<ul>
+<li><p>Numbers</p>
+<ul>
+<li>int………a = 10………..Signed Integer</li>
+<li>long……..a = 345L………(L) Long integers, they can also be represented in octal and hexadecimal</li>
+<li>float…….a = 45.67……..(.) Floating point real values</li>
+<li>complex…..a = 3.14J……..(J) Contains integer in the range 0 to 255.</li>
+<li>use conversion functions (<code>int()</code>, <code>long()</code>, <code>float()</code>, <code>complex()</code>) to convert data from one type to another</li>
+</ul>
+</li>
+<li>String</li>
+<li><p>List</p>
+<ul>
+<li><p>like array in js(ex: <code>a = [1, 2 , 3]</code>)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mylist = [<span class="string">'Rhino'</span>, <span class="string">'Grasshopper'</span>, <span class="string">'Flamingo'</span>, <span class="string">'Bongo'</span>]</span><br><span class="line">B = len(mylist) <span class="comment"># This will return the length of the list which is 3. The index is 0, 1, 2, 3.</span></span><br><span class="line"><span class="keyword">print</span> mylist[<span class="number">1</span>] <span class="comment"># This will return the value at index 1, which is 'Grasshopper'</span></span><br><span class="line"><span class="keyword">print</span> mylist[<span class="number">0</span>:<span class="number">2</span>] <span class="comment"># This will return the first 3 elements in the list.</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>dynamic and mutable</p>
+</li>
+</ul>
+</li>
+<li>Tuple<ul>
+<li>like <code>list</code> but use parenthesis <code>()</code> instead of square bracket <code>[]</code> (ex: <code>a = (1, 2 , 3)</code>)</li>
+<li>fixed size and immutable</li>
+</ul>
+</li>
+<li><p>Set</p>
+<ul>
+<li>like <code>list</code> but use curly braces <code>{}</code> instead of square bracket <code>[]</code> (ex: <code>a = {1, 2 , 3}</code>)</li>
+<li>dynamic, mutable and unique value<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">lst = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>] <span class="comment"># 1 list with duplicated with `2`</span></span><br><span class="line">st = set(lst)</span><br><span class="line"><span class="comment">#or</span></span><br><span class="line">st = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>&#125; </span><br><span class="line"><span class="keyword">print</span> st <span class="comment"># -&gt; set([1, 2, 3])</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Dictionary</p>
+<ul>
+<li>like json in js <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">room_num = &#123;<span class="string">'john'</span>: <span class="number">425</span>, <span class="string">'tom'</span>: <span class="number">212</span>&#125;</span><br><span class="line">room_num[<span class="string">'john'</span>] = <span class="number">645</span>  <span class="comment"># set the value associated with the 'john' key to 645</span></span><br><span class="line"><span class="keyword">print</span> (room_num[<span class="string">'tom'</span>]) <span class="comment"># print the value of the 'tom' key.</span></span><br><span class="line">room_num[<span class="string">'isaac'</span>] = <span class="number">345</span> <span class="comment"># Add a new key 'isaac' with the associated value</span></span><br><span class="line"><span class="keyword">print</span> (room_num.keys()) <span class="comment"># print out a list of keys in the dictionary</span></span><br><span class="line"><span class="keyword">print</span> (<span class="string">'isaac'</span> <span class="keyword">in</span> room_num) <span class="comment"># test to see if 'issac' is in the dictionary.  This returns true.</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p>refer: <a href="https://developer.rhino3d.com/guides/rhinoPython/python-datatypes/" target="_blank" rel="noopener">rhino3d</a></p>
+<h2 id="variable"><a href="#variable" class="headerlink" title="variable"></a>variable</h2><ul>
+<li><p>js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">1</span></span><br><span class="line"><span class="keyword">const</span> b = <span class="number">2</span></span><br><span class="line"><span class="keyword">var</span> c = <span class="number">3</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span></span><br><span class="line">b = <span class="number">2</span></span><br><span class="line"></span><br><span class="line">a, b, c = <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span></span><br><span class="line"></span><br><span class="line">a, b, c = <span class="number">4</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="condition"><a href="#condition" class="headerlink" title="condition"></a>condition</h2><ul>
+<li><p>js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(a)&#123;</span><br><span class="line"></span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span>(b)&#123;</span><br><span class="line"></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> a:</span><br><span class="line"></span><br><span class="line"><span class="keyword">elif</span> b:</span><br><span class="line"></span><br><span class="line"><span class="keyword">else</span>:</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="operator"><a href="#operator" class="headerlink" title="operator"></a>operator</h2><p>  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators/" target="_blank" rel="noopener">Javascript Operator</a><br>  <img src="operator.jpg" alt=""><br>  <a href="https://data-flair.training/blogs/python-operator/" target="_blank" rel="noopener">Python Operator</a></p>
+<h2 id="ternary-operator"><a href="#ternary-operator" class="headerlink" title="ternary operator"></a>ternary operator</h2><ul>
+<li><p>js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = b &gt; <span class="number">10</span> ? <span class="number">10</span> : b</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#1. basic:</span></span><br><span class="line">syntax: [on_true] <span class="keyword">if</span> [expression] <span class="keyword">else</span> [on_false]</span><br><span class="line">a = <span class="number">10</span> <span class="keyword">if</span> b &gt; <span class="number">10</span> <span class="keyword">else</span> b</span><br><span class="line"><span class="comment">#2. use tuple</span></span><br><span class="line">syntax: [tuple][condition]</span><br><span class="line">a,b = <span class="number">1</span>,<span class="number">2</span></span><br><span class="line">c = (a,b)[a&gt;b]</span><br><span class="line"><span class="comment">#3. use Dictionnaries</span></span><br><span class="line">&#123;<span class="keyword">False</span>:<span class="string">f"b:<span class="subst">&#123;b&#125;</span>"</span>,<span class="keyword">True</span>:<span class="string">f"a:<span class="subst">&#123;a&#125;</span>"</span>&#125;[a&gt;b]</span><br><span class="line"><span class="comment">#4. use lambda</span></span><br><span class="line">(<span class="keyword">lambda</span> :<span class="string">f"b:<span class="subst">&#123;b&#125;</span>"</span>,<span class="keyword">lambda</span> :<span class="string">f"a:<span class="subst">&#123;a&#125;</span>"</span>)[a&gt;b]() <span class="comment"># sooooooo complex</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>refer: <a href="https://data-flair.training/blogs/python-ternary-operator/" target="_blank" rel="noopener">data-flair</a></p>
+<h2 id="loop"><a href="#loop" class="headerlink" title="loop"></a>loop</h2><ul>
+<li>js<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">in</span> array)&#123;<span class="comment">//i : index</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> array)&#123; <span class="comment">// v : value</span></span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>py<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> arr:</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="code-block"><a href="#code-block" class="headerlink" title="code block"></a>code block</h2><ul>
+<li><p>js use  <code>{}</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ( a &gt; b ) &#123;</span><br><span class="line">  alert(a)<span class="comment">//use new line character..</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  alert(b); <span class="comment">// ..or `;` to end line</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>py: use <code>space</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">if</span> a &gt; b: </span><br><span class="line">      <span class="keyword">print</span> a <span class="comment"># use new line character</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">      <span class="keyword">print</span> b</span><br><span class="line">  </span><br><span class="line">    <span class="comment"># if want prevent new line break line use \ character like belove</span></span><br><span class="line">    sum = <span class="number">1</span> + <span class="number">3</span> + <span class="number">5</span> + \</span><br><span class="line">      <span class="number">7</span> + <span class="number">9</span> + <span class="number">11</span> + \</span><br><span class="line">      <span class="number">13</span> + <span class="number">15</span> + <span class="number">17</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">#or</span></span><br><span class="line">    message = <span class="string">"""This is a string that will span across multiple lines. Using newline characters</span></span><br><span class="line"><span class="string">and no spaces for the next lines. The end of lines within this string also count as a newline when printed"""</span></span><br></pre></td></tr></table></figure>
+<p>use space &amp; new line to break </p>
+</li>
+</ul>
+<h2 id="function"><a href="#function" class="headerlink" title="function"></a>function</h2><ul>
+<li>js<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"><span class="keyword">const</span> a = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  alert(<span class="string">'anph'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> b = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  alert(<span class="string">'anph'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">a</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">'anph'</span></span><br></pre></td></tr></table></figure>
+<h2 id="arrow-lambda"><a href="#arrow-lambda" class="headerlink" title="arrow | lambda"></a>arrow | lambda</h2></li>
+<li><p>js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> sum = <span class="function">(<span class="params">a, b</span>) =&gt;</span> a + b</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sum = <span class="keyword">lambda</span> a, b: a + b</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="switch-case"><a href="#switch-case" class="headerlink" title="switch case"></a>switch case</h2><ul>
+<li><p>js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span>(x)&#123;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">  <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">  <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">  <span class="keyword">break</span>;</span><br><span class="line">  ...</span><br><span class="line">  <span class="keyword">default</span>:</span><br><span class="line">  <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>py: python éo có, vâng python éo có switch case và phải tự chế -_-</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#1. kiểu truyền thống: use dictionary</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">week</span><span class="params">(i)</span>:</span></span><br><span class="line">  switcher=&#123;<span class="number">0</span>:<span class="string">'Sunday'</span>,<span class="number">1</span>:<span class="string">'Monday'</span>,<span class="number">2</span>:<span class="string">'Tuesday'</span>,<span class="number">3</span>:<span class="string">'Wednesday'</span>,<span class="number">4</span>:<span class="string">'Thursday'</span>,<span class="number">5</span>:<span class="string">'Friday'</span>,<span class="number">6</span>:<span class="string">'Saturday'</span>&#125;</span><br><span class="line">  <span class="keyword">return</span> switcher.get(i,<span class="string">"Invalid day of week"</span>)</span><br><span class="line"><span class="comment">#########</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>week(<span class="number">2</span>)</span><br><span class="line"><span class="string">'Tuesday'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>week(<span class="number">0</span>)</span><br><span class="line"><span class="string">'Sunday'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>week(<span class="number">7</span>)</span><br><span class="line"><span class="string">'Invalid day of week'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>week(<span class="number">4.5</span>)</span><br><span class="line"><span class="string">'Invalid day of week'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#2. Using Python Functions &amp; Lambdas</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">zero</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">return</span> <span class="string">'zero'</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">one</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">return</span> <span class="string">'one'</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">indirect</span><span class="params">(i)</span>:</span></span><br><span class="line">  switcher = &#123; <span class="number">0</span>:zero, <span class="number">1</span>:one, <span class="number">2</span>:<span class="keyword">lambda</span>:<span class="string">'two'</span> &#125;</span><br><span class="line">  func = switcher.get(i,<span class="keyword">lambda</span> :’Invalid’)</span><br><span class="line">  <span class="keyword">return</span> func()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>indirect(<span class="number">4</span>)</span><br><span class="line">‘Invalid’</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>indirect(<span class="number">2</span>)</span><br><span class="line"><span class="string">'two'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>indirect(<span class="number">1</span>)</span><br><span class="line"><span class="string">'one'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>indirect(<span class="number">0.5</span>)</span><br><span class="line"><span class="string">'Invalid'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#3. With Python Classes</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Switcher</span><span class="params">(object)</span>:</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">indirect</span><span class="params">(self,i)</span>:</span></span><br><span class="line">    method_name=<span class="string">'number_'</span>+str(i)</span><br><span class="line">    method=getattr(self,method_name,<span class="keyword">lambda</span> :<span class="string">'Invalid'</span>)</span><br><span class="line">    <span class="keyword">return</span> method()</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">number_0</span><span class="params">(self)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> <span class="string">'zero'</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">number_1</span><span class="params">(self)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> <span class="string">'one'</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">number_2</span><span class="params">(self)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> <span class="string">'two'</span></span><br><span class="line"><span class="comment">##</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s=Switcher()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s.indirect(<span class="number">2</span>)</span><br><span class="line"><span class="string">'two'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s.indirect(<span class="number">4</span>)</span><br><span class="line"><span class="string">'Invalid'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s.number_1()</span><br><span class="line"><span class="string">'one'</span></span><br><span class="line">`</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="map"><a href="#map" class="headerlink" title="map()"></a><code>map()</code></h2><ul>
+<li><p>js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> numbers = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">0</span>]</span><br><span class="line"><span class="keyword">const</span> map0 = numbers.map(<span class="function"><span class="params">x</span>=&gt;</span>x*<span class="number">2</span>)</span><br><span class="line"><span class="comment">//-&gt;[2, 4, 6, 8, 10, 12, 12, 14, 16, 18, 0]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">numbers = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">0</span>]</span><br><span class="line">map0 = list(map(<span class="keyword">lambda</span> x:x*<span class="number">2</span>, numbers))</span><br><span class="line"><span class="comment">#-&gt;[2, 4, 6, 8, 10, 12, 12, 14, 16, 18, 0]</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="filter"><a href="#filter" class="headerlink" title="filter()"></a><code>filter()</code></h2><ul>
+<li><p>js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> numbers = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">0</span>]</span><br><span class="line"><span class="keyword">const</span> filter0 = numbers.filter(<span class="function"><span class="params">x</span>=&gt;</span><span class="number">0</span>===x%<span class="number">2</span>)</span><br><span class="line"><span class="comment">//-&gt;[2, 4, 6, 6, 8, 0]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">numbers = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">0</span>]</span><br><span class="line">map0 = list(map(<span class="keyword">lambda</span> x:x*<span class="number">2</span>, numbers))</span><br><span class="line"><span class="comment">#-&gt;[2, 4, 6, 8, 10, 12, 12, 14, 16, 18, 0]</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="reduce"><a href="#reduce" class="headerlink" title="reduce()"></a><code>reduce()</code></h2><ul>
+<li><p>js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> numbers = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">0</span>]</span><br><span class="line"><span class="keyword">const</span> reduce0 = numbers.reduce(<span class="function">(<span class="params">a,b</span>)=&gt;</span>a+b)</span><br><span class="line"><span class="comment">//-&gt;51</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#map</span></span><br><span class="line">numbers = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">0</span>]</span><br><span class="line">reduce0 = reduce(<span class="keyword">lambda</span> a,b: a+b, number)</span><br><span class="line"><span class="comment">#-&gt;51</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="exception"><a href="#exception" class="headerlink" title="exception"></a>exception</h2><ul>
+<li><p><code>throw</code> | <code>raise</code></p>
+<ul>
+<li><p>js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(e) <span class="keyword">throw</span> <span class="string">'e'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">a</span><span class="params">(e)</span>:</span></span><br><span class="line">  <span class="keyword">if</span> e</span><br><span class="line">    <span class="keyword">raise</span> Exception</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><code>try catch</code> | <code>try except</code></p>
+<ul>
+<li><p>js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;<span class="keyword">catch</span>(e)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(e)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line"></span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">  <span class="keyword">print</span> sys.exc_info()[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="a-bit-bonus"><a href="#a-bit-bonus" class="headerlink" title="a bit bonus"></a>a bit bonus</h2><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Javascript</th>
+<th>Python</th>
+<th>desc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> repeat string</td>
+<td>‘<code>str&#39;.repeat(10)</code></td>
+<td><code>&#39;str&#39; * 10</code></td>
+<td>o_0</td>
+</tr>
+<tr>
+<td> power number</td>
+<td><code>Math.pow(2, 3)</code></td>
+<td><code>2 ** 3</code></td>
+<td>amazing</td>
+</tr>
+<tr>
+<td> sum array</td>
+<td><code>[1,2,3] + [4,5,6] =&gt; 1,2,34,5,6</code></td>
+<td><code>[1,2,3] + [4,5,6] =&gt; [1, 2, 3, 4, 5, 6]</code></td>
+<td>amazing</td>
+</tr>
+</tbody>
+</table>
+<h2 id="OOP"><a href="#OOP" class="headerlink" title="OOP"></a>OOP</h2><ul>
+<li><p>js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Đây là docstring. Một lớp mới vừa được khai báo.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Anph</span> <span class="keyword">extends</span> <span class="title">ClassParent</span> </span>&#123;<span class="comment">//single extend</span></span><br><span class="line">    <span class="keyword">constructor</span>()&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//more code</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//use</span></span><br><span class="line">  <span class="keyword">const</span> anph = <span class="keyword">new</span> Anph()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Anph</span><span class="params">(ClassParent, ClassParent2)</span>:</span><span class="comment"># multi-extends able</span></span><br><span class="line">  <span class="string">'''Đây là docstring. Một lớp mới vừa được khai báo.'''</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">()</span>:</span></span><br><span class="line">    </span><br><span class="line">  <span class="comment">#more code</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#use</span></span><br><span class="line">anph = Anph()</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+  </div>
+</article>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">home</a></li>
+         
+          <li><a href="/categories/javascript">javascript</a></li>
+         
+          <li><a href="/categories/python">python</a></li>
+         
+          <li><a href="/categories/docker">docker</a></li>
+         
+          <li><a href="/categories/algorithm">algorithm</a></li>
+         
+          <li><a href="/categories/git">git</a></li>
+         
+          <li><a href="/about/">about</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#This-note-write-some-difference-between-JS-with-Python-from-a-JS-developer-learning-Python"><span class="toc-number">1.</span> <span class="toc-text">This note write some difference between JS with Python from a JS developer learning Python</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#comment-in-code"><span class="toc-number">1.1.</span> <span class="toc-text">comment in code</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Data-type"><span class="toc-number">1.2.</span> <span class="toc-text">Data type</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#variable"><span class="toc-number">1.3.</span> <span class="toc-text">variable</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#condition"><span class="toc-number">1.4.</span> <span class="toc-text">condition</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#operator"><span class="toc-number">1.5.</span> <span class="toc-text">operator</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ternary-operator"><span class="toc-number">1.6.</span> <span class="toc-text">ternary operator</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#loop"><span class="toc-number">1.7.</span> <span class="toc-text">loop</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#code-block"><span class="toc-number">1.8.</span> <span class="toc-text">code block</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#function"><span class="toc-number">1.9.</span> <span class="toc-text">function</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#arrow-lambda"><span class="toc-number">1.10.</span> <span class="toc-text">arrow | lambda</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#switch-case"><span class="toc-number">1.11.</span> <span class="toc-text">switch case</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#map"><span class="toc-number">1.12.</span> <span class="toc-text">map()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#filter"><span class="toc-number">1.13.</span> <span class="toc-text">filter()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#reduce"><span class="toc-number">1.14.</span> <span class="toc-text">reduce()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#exception"><span class="toc-number">1.15.</span> <span class="toc-text">exception</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#a-bit-bonus"><span class="toc-number">1.16.</span> <span class="toc-text">a bit bonus</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OOP"><span class="toc-number">1.17.</span> <span class="toc-text">OOP</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://anph29.github.io/2019/03/27/Compare-Python-with-Javascript/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://anph29.github.io/2019/03/27/Compare-Python-with-Javascript/&text=Compare Python With Javascript"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://anph29.github.io/2019/03/27/Compare-Python-with-Javascript/&title=Compare Python With Javascript"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://anph29.github.io/2019/03/27/Compare-Python-with-Javascript/&is_video=false&description=Compare Python With Javascript"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Compare Python With Javascript&body=Check out this article: https://anph29.github.io/2019/03/27/Compare-Python-with-Javascript/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://anph29.github.io/2019/03/27/Compare-Python-with-Javascript/&title=Compare Python With Javascript"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://anph29.github.io/2019/03/27/Compare-Python-with-Javascript/&title=Compare Python With Javascript"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://anph29.github.io/2019/03/27/Compare-Python-with-Javascript/&title=Compare Python With Javascript"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://anph29.github.io/2019/03/27/Compare-Python-with-Javascript/&title=Compare Python With Javascript"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://anph29.github.io/2019/03/27/Compare-Python-with-Javascript/&name=Compare Python With Javascript&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+    
+      
+  <script>
+    var disqus_shortname = 'https-anph29-github-io';
+    
+    var disqus_url = 'https://anph29.github.io/2019/03/27/Compare-Python-with-Javascript/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//go.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  
+<footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 Anph
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">home</a></li>
+         
+          <li><a href="/categories/javascript">javascript</a></li>
+         
+          <li><a href="/categories/python">python</a></li>
+         
+          <li><a href="/categories/docker">docker</a></li>
+         
+          <li><a href="/categories/algorithm">algorithm</a></li>
+         
+          <li><a href="/categories/git">git</a></li>
+         
+          <li><a href="/about/">about</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+<div id="disqus_thread"></div>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Disqus Comments -->
+
+
